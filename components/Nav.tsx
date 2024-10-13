@@ -90,6 +90,7 @@ const Nav: React.FC = () => {
               width={37}
               height={37}
               onClick={() => setToggleDropdown((prev) => !prev)}
+              className="rounded-full"
             />
             {toggleDropdown && (
               <div className="dropdown">

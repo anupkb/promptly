@@ -1,6 +1,6 @@
 import { Schema, model, models, Document, Model } from "mongoose";
 
-interface IPrompt extends Document {
+export interface IPrompt extends Document {
   creator: string;
   prompt: string;
   tag: string;
