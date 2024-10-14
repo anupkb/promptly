@@ -26,7 +26,7 @@ const authOptions: NextAuthOptions = {
       return session;
     },
 
-    async signIn({ profile }: { profile?: AuthUser["profile"] }) {
+    async signIn({ profile }: { profile?: AuthUser["profile"] }) {      
       try {
         await connectDB();
 
@@ -41,7 +41,7 @@ const authOptions: NextAuthOptions = {
           await User.create({
             email: profile.email,
             username: profile.name?.replace(/\s+/g, "").toLowerCase(),
-            image: profile.image,
+            image: profile.picture || profile.image || "",
           });
         }
 

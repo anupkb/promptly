@@ -18,18 +18,18 @@ const MyProfile: React.FC = () => {
   const [myPosts, setMyPosts] = useState<Post[]>([]);
 
   useEffect(() => {
-    const fetchPosts = async () => {
-      try {
-        const response = await fetch(`/api/users/${session?.user.id}/posts`);
-        const data: Post[] = await response.json();
-        setMyPosts(data);
-      } catch (error) {
-        console.error("Failed to fetch posts:", error);
-      }
-    };
-
     if (session?.user.id) fetchPosts();
   }, [session?.user.id]);
+
+  const fetchPosts = async () => {
+    try {
+      const response = await fetch(`/api/users/${session?.user.id}/posts`);
+      const data: Post[] = await response.json();
+      setMyPosts(data);
+    } catch (error) {
+      console.error("Failed to fetch posts:", error);
+    }
+  };
 
   const handleEdit = (post: Post) => {
     router.push(`/update-prompt?id=${post._id}`);
@@ -42,6 +42,8 @@ const MyProfile: React.FC = () => {
 
     if (hasConfirmed) {
       try {
+        console.log("POST ID", post._id);
+
         await fetch(`/api/prompt/${post._id}`, { method: "DELETE" });
         setMyPosts((prev) => prev.filter((item) => item._id !== post._id));
       } catch (error) {
