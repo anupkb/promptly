@@ -1,6 +1,38 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Promptly - AI Prompt Sharing Platform
 
-## Getting Started
+Promptly is a full-stack web application built with **Next.js** that allows users to create, share, and discover AI prompts. Whether you're looking for inspiration or contributing your own ideas, this platform empowers users to explore a wide variety of creative prompts.
+
+### **Prerequisites**
+
+Make sure you have the following installed on your system:
+
+- Node.js 18+
+- MongoDB (local or remote)
+- Vercel CLI (optional, for deployment)
+
+### **Project Installation**
+
+1.Clone the repository:
+
+```bash
+git clone https://github.com/anupkb/promptly.git
+cd promptly
+```
+
+2.Install dependencies:
+npm install
+
+## **Create .env File in Your Root Directory**
+
+- **Add the following variables to the .env file:**
+  GOOGLE_ID=<your-google-client-id>
+  GOOGLE_CLIENT_SECRET=<your-google-client-secret>
+  MONGODB_URI=<your-mongodb-connection-uri>
+  NEXTAUTH_URL=<your-app-url>
+  NEXTAUTH_URL_INTERNAL=<your-internal-url>
+  NEXTAUTH_SECRET=<your-nextauth-secret>
+
+## **Run the Project**
 
 First, run the development server:
 
@@ -16,21 +48,51 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## **Features**
 
-## Learn More
+- **Share your AI-Prompts**
 
-To learn more about Next.js, take a look at the following resources:
+  - Share your AI-Prompts with a # and discover other's prompt for your task.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Search Functionality**
+  - Search by **prompt content**, **tag**, or **username**.
+- **Tag-based Filtering**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+  - Click on a tag to instantly filter and explore prompts related to that tag.
 
-## Deploy on Vercel
+- **User Profiles**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+  - View other users' profiles to see all the prompts they’ve shared.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Authentication**
+  - Complete login system with support for **OAuth 2.0** and **OpenID Connect**.
+- **Fully Responsive UI**
+  - Optimized for desktop and mobile using **Tailwind CSS**.
+
+---
+
+## **Tech Stack**
+
+- **Stack:** React.js, Next.js, Tailwind CSS
+- **Database:** MongoDB with Mongoose ORM
+- **Authentication:** NextAuth, OAuth 2.0, OpenID Connect, Auth0
+- **Deployment:** Vercel
+
+---
+
+- **Home Page**  
+  ![Home Page Screenshot]()
+
+- **Create Prompt**  
+  ![Create Prompt Screenshot]()
+
+- **User Profile View**  
+  ![User Profile Screenshot]()
+
+---
+
+## **Contributing**
+
+    - Feel free to submit a pull request if you'd like to contribute to this project!

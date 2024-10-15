@@ -9,11 +9,12 @@ export const GET = async (request: NextRequest): Promise<NextResponse> => {
     await connectDB();
 
     const prompts: IPrompt[] = await Prompt.find({}).populate("creator");
+    console.log(request.url);
     return NextResponse.json(prompts, { status: 200 });
     
   } catch (error) {
     console.error("Error:", error);
     return new NextResponse("Failed to fetch the prompts!", { status: 500 });
   }
-  
+
 };

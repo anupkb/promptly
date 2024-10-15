@@ -12,6 +12,7 @@ export const GET = async (request, { params }) => {
         return new Response(JSON.stringify(prompt), { status: 200 })
 
     } catch (error) {
+        console.log("Error in fetching the prompt:", error);
         return new Response("Internal Server Error", { status: 500 });
     }
 }
@@ -35,6 +36,7 @@ export const PATCH = async (request, { params }) => {
 
         return new Response("Successfully updated the Prompts", { status: 200 });
     } catch (error) {
+        console.log("Error in updating the prompt:", error);
         return new Response("Error Updating Prompt", { status: 500 });
     }
 };
